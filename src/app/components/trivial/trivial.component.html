@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Trivial</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <div class="row" *ngIf="responded">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let card of cards; let myIndex = index">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{card.question}}</h4>
+
+          <button type="button" class="btn btn-large btn-block btn-primary" *ngFor="let answer of card.answers">{{answer}}</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<h1 *ngIf="!responded">Loading...</h1>
+<div *ngIf="responded">
+
+
+  <div class="jumbotron">
+    <h1 class="display-4">{{result.title}}</h1>
+    <p class="lead">{{result.date}}</p>
+    <hr class="my-4">
+    <img [src]="result.url" alt="">
+    <p>{{result.explanation}}</p>
+  </div>
+  {{result | json}}
+</div>

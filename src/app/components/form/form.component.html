@@ -1,0 +1,3 @@
+Name: <input type="text" [(ngModel)]="newHero.name" (keyup)="checkName()"><br>
+Descrition: <input type="text" [(ngModel)]="newHero.description">
+<br> <button (click)="service.addHero(newHero)" >Add Hero</button>
