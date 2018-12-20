@@ -22,6 +22,7 @@ import { DateComponent } from './components/date/date.component';
 import { MyformComponent } from './components/myform/myform.component';
 import {UIRouterModule} from '@uirouter/angular';
 import { TrivialComponent } from './components/trivial/trivial.component';
+import { CardComponent } from './components/card/card.component';
 
 const todayState = { name: 'today', url: '/today',  component: MainComponent };
 const anydayState = { name: 'antday', url: '/anyday',  component: DateComponent };
@@ -42,7 +43,8 @@ const anydayState = { name: 'antday', url: '/anyday',  component: DateComponent 
     MenuComponent,
     DateComponent,
     MyformComponent,
-    TrivialComponent
+    TrivialComponent,
+    CardComponent
   ],
   imports: [
     UIRouterModule.forRoot({ states: [ todayState, anydayState ], useHash: true }),

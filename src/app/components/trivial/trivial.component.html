@@ -16,16 +16,7 @@
 <div class="container">
   <div class="row" *ngIf="responded">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let card of cards; let cardIndex = index">
-      <div class="card">
-        <div class="card-body" *ngIf="!card.answered">
-          <h4 class="card-title">{{card.question}}</h4>
-          <button type="button" class="btn btn-large btn-block btn-primary" *ngFor="let answer of card.answers; let buttonIndex = index" (click)="buttonClicked(cardIndex, buttonIndex)">{{answer}}</button>
-        </div>
-        <div class="card-body" *ngIf="card.answered">
-          <h4 class="card-title">{{card.question}}</h4>
-          <button type="button" disabled [class]="getClass(cardIndex, buttonIndex)" *ngFor="let answer of card.answers; let buttonIndex = index" (click)="buttonClicked(cardIndex, buttonIndex)">{{answer}}</button>
-        </div>
-      </div>
+      <app-card [card]="card"></app-card>
     </div>
   </div>
 </div>
