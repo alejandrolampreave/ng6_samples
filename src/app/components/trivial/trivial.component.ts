@@ -37,4 +37,18 @@ export class TrivialComponent implements OnInit {
 
   processFinal() {}
 
+  buttonClicked (cardIndex: number, buttonIndex: number) {
+    this.cards[cardIndex].answered = true;
+    this.cards[cardIndex].answeredIndex = buttonIndex;
+  }
+
+  getClass (cardIndex: number, buttonIndex: number): string {
+    if (this.cards[cardIndex].answers[buttonIndex] === this.cards[cardIndex].correct_answer) {
+      return 'btn btn-large btn-block btn-success';
+    } else if (this.cards[cardIndex].answeredIndex === buttonIndex) {
+      return 'btn btn-large btn-block btn-danger';
+    }
+    return 'btn btn-large btn-block btn-secundary';
+  }
+
 }

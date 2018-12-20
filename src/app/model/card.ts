@@ -7,8 +7,10 @@ export class Card {
     correct_answer: string;
     incorrect_answers: string[];
     answers: string[] = [];
+    answered: boolean = false;
+    answeredIndex: number = -1;
 
-    constructor (item: any) {
+    constructor(item: any) {
         this.category = item.category;
         this.type = item.type;
         this.difficulty = item.difficulty;
