@@ -1,10 +1,11 @@
 <div class="card">
-    <div class="card-body" *ngIf="!card.answered">
-      <h4 class="card-title">{{card.question}}</h4>
-      <button type="button" class="btn btn-large btn-block btn-primary" *ngFor="let answer of card.answers; let buttonIndex = index" (click)="buttonClicked(buttonIndex)">{{answer}}</button>
-    </div>
-    <div class="card-body" *ngIf="card.answered">
-      <h4 class="card-title">{{card.question}}</h4>
-      <button type="button" disabled [class]="getClass(buttonIndex)" *ngFor="let answer of card.answers; let buttonIndex = index">{{answer}}</button>
-    </div>
+  <div class="card-body" *ngIf="!card.answered">
+    <h4 class="card-title" [innerHTML]="card.question"></h4>
+    <button type="button" class="btn btn-large btn-block btn-primary" *ngFor="let answer of card.answers; let buttonIndex = index"
+      (click)="buttonClicked(buttonIndex)">{{answer}}</button>
   </div>
+  <div class="card-body" *ngIf="card.answered">
+    <h4 class="card-title" [innerHTML]="card.question"></h4>
+    <button type="button" disabled [class]="getClass(buttonIndex)" *ngFor="let answer of card.answers; let buttonIndex = index">{{answer}}</button>
+  </div>
+</div>

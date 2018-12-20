@@ -11,6 +11,7 @@ export class TrivialComponent implements OnInit {
   result: any;
   responded: boolean  = false;
   cards: Array<Card> = new Array<Card>();
+  counter: number = 0;
 
   constructor(public service: RequestCountriesService) { }
 
@@ -37,6 +38,12 @@ export class TrivialComponent implements OnInit {
 
   processFinal() {}
 
-
+  processAnswer(correct: boolean) {
+    if (correct) {
+      this.counter += 20;
+    } else {
+      this.counter = 0;
+    }
+  }
 
 }
